@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <script type="text/javascript" src="//cdn.evgnet.com/beacon/t55685555563p3pas3a3n3n3g069554296/punyatesting/scripts/evergage.min.js"></script>
+    <link rel="stylesheet/text" href="styles.css">
+</head>
+<body>
+    <div id="product-details"></div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        
+        fetch(`https://dummyjson.com/products/${productId}`)
+            .then(res => res.json())
+            .then(product => {
+                document.getElementById('product-details').innerHTML = `
+                    <h1>${product.title}</h1>
+                    <img src="${product.thumbnail}" alt="${product.title}">
+                    <p><strong>Description:</strong> ${product.description}</p>
+                    <p><strong>Price:</strong> $${product.price}</p>
+                    <a href="index.html">Back to Products</a>
+                `;
+            });
+    </script>
+</body>
+</html>

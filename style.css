@@ -1,0 +1,29 @@
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: darkblue;
+}
